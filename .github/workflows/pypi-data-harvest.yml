@@ -14,10 +14,10 @@ jobs:
         cd kestrel-lang
         pip install -U pip
         pip install pypistats
-        filename=$(date +"%m-%d-%y-%H-%M-%S").json
+        filename=$(date +"%Y-%m-%d").json
         pypistats overall -f json -d kestrel-lang > $filename
         git add $filename
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git commit -am "check and add daily download information"
+        git commit -am "check and add daily downloads information"
         git push
