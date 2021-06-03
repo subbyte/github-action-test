@@ -10,7 +10,7 @@ jobs:
         ref: pypi-stats
     - name: Harvest daily downloads information
       run: |
-        mkdir kestrel-lang
+        mkdir -p kestrel-lang
         cd kestrel-lang
         pip install -U pip
         pip install pypistats
