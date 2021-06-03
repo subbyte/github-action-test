@@ -2,7 +2,7 @@ name: Harvest PyPI stats
 on: push
 
 jobs:
-  build:
+  harvest:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
