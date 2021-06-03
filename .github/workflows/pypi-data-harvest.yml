@@ -15,7 +15,7 @@ jobs:
         filename=$(date +"%m-%d-%y-%H-%M-%S").json
         pypistats overall -f json -d kestrel-lang > $filename
         git add $filename
-        #git config --global user.name "Xiaokui Shu"
-        #git config --global user.email "subbyte@gmail.com"
+        git config user.name "Xiaokui Shu"
+        git config user.email "subbyte@gmail.com"
         git commit -am "update"
         git push
