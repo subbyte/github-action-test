@@ -7,15 +7,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: xxx
-    - name: Create local changes
+        ref: pypi-stats
+    - name: Harvest daily downloads information
       run: |
         pip install -U pip
         pip install pypistats
         filename=$(date +"%m-%d-%y-%H-%M-%S").json
         pypistats overall -f json -d kestrel-lang > $filename
         git add $filename
-        git config user.name "Xiaokui Shu"
-        git config user.email "subbyte@gmail.com"
-        git commit -am "update"
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -am "check and add daily download information"
         git push
