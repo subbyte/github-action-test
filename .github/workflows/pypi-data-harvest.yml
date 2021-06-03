@@ -1,0 +1,21 @@
+name: Harvest PyPI stats
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Create local changes
+      run: |
+        pip install -U pip
+        pip install pypistats
+        git checkout xxx
+        pypistats overall -f json -d kestrel-lang >> xxx
+    - name: Commit files
+      run: |
+        git add xxx
+        #git config --global user.name "Xiaokui Shu"
+        #git config --global user.email "subbyte@gmail.com"
+        git commit -am "update"
+        git push -u origin xxx
