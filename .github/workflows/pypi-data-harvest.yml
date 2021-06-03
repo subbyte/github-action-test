@@ -10,6 +10,8 @@ jobs:
         ref: pypi-stats
     - name: Harvest daily downloads information
       run: |
+        mkdir kestrel-lang
+        cd kestrel-lang
         pip install -U pip
         pip install pypistats
         filename=$(date +"%m-%d-%y-%H-%M-%S").json
