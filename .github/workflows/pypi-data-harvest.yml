@@ -6,16 +6,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    with:
+      ref: xxx
     - name: Create local changes
       run: |
         pip install -U pip
         pip install pypistats
-        git checkout xxx
-        pypistats overall -f json -d kestrel-lang >> xxx
-    - name: Commit files
-      run: |
-        git add xxx
+        filename=$(date +"%m-%d-%y-%H-%M-%S").json
+        pypistats overall -f json -d kestrel-lang > $filename
+        git add $filename
         #git config --global user.name "Xiaokui Shu"
         #git config --global user.email "subbyte@gmail.com"
         git commit -am "update"
-        git push -u origin xxx
+        git push
