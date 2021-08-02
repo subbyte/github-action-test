@@ -15,6 +15,9 @@ jobs:
             #python-version: '3.9' # firepit/issues/7
     steps:
       - uses: actions/checkout@v2
+        with:
+          name: opencybersecurityalliance/firepit
+          ref: develop
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -23,6 +26,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install --upgrade setuptools
-          python -m pip install firepit
+          python -m pip install .
       #- name: Unit testing
         #run: pytest -vv
