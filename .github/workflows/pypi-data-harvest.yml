@@ -1,5 +1,6 @@
 name: Harvest PyPI stats
-on: push
+
+on: workflow_dispatch
 
 jobs:
   harvest:
